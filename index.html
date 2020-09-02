@@ -1,0 +1,152 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script>
+    window.onload = function() {
+      var studentDataPoints = [];
+      var employeeDataPoints = [];
+      var totalDataPoints = [];
+      var totalCases = null;
+      var latestCases = null;
+
+      var activeCasesOptions =  {
+      	animationEnabled: true,
+      	theme: "light2",
+      	title: {
+      		text: "Active Reported CNU COVID-19 Cases"
+      	},
+      	axisX: {
+      		valueFormatString: "MM/DD/YYYY",
+      	},
+      	axisY: {
+      		title: "# Cases",
+      		titleFontSize: 24
+      	},
+      	data: [{
+          name: "Students",
+      		type: "line",
+          showInLegend: true,
+      		dataPoints: studentDataPoints
+      	},
+        {
+          name: "Employees",
+      		type: "line",
+          showInLegend: true,
+      		dataPoints: employeeDataPoints
+      	}]
+      };
+
+      var totalCasesOptions =  {
+        animationEnabled: true,
+        theme: "light2",
+        title: {
+          text: "Total Reported CNU COVID-19 Cases"
+        },
+        axisX: {
+          valueFormatString: "MM/DD/YYYY",
+        },
+        axisY: {
+          title: "# Cases",
+          titleFontSize: 24
+        },
+        data: [{
+          name: "All Cases",
+          type: "line",
+          showInLegend: true,
+          dataPoints: totalDataPoints
+        }]
+      };
+
+      $.getJSON("data.json", function(data) {
+        for (var i = 0; i < data.length; i++) {
+          var xVal = new Date(data[i].date);
+          var studentYVal = data[i].student_cases;
+          var employeeYVal = data[i].employee_cases;
+          totalCases += data[i].delta;
+          latestCases = data[i].delta;
+          studentDataPoints.push({
+            x: xVal,
+            y: studentYVal
+          });
+          employeeDataPoints.push({
+            x: xVal,
+            y: employeeYVal
+          });
+          totalDataPoints.push({
+            x: xVal,
+            y: totalCases
+          })
+        }
+        $("#active-cases-chart").CanvasJSChart(activeCasesOptions);
+        $("#total-cases-chart").CanvasJSChart(totalCasesOptions);
+        $("#total-cases").text(totalCases);
+        $("#todays-cases").text(latestCases);
+      });
+    }
+  </script>
+</head>
+<body>
+<div class="container">
+  <div id="active-cases-chart" style="height: 370px; width: 100%;"></div>
+</div>
+<br>
+<div class="container">
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <p class="lead">Today, <strong style="display:inline" id="todays-cases">...</strong> new COVID-19 case(s) were reported to CNU</p>
+    <hr class="my-4">
+    <p class="lead">In total, <strong style="display:inline"  id="total-cases">...</strong> positive COVID-19 cases have been reported</p>
+  </div>
+</div>
+</div>
+<div class="container">
+  <div id="total-cases-chart" style="height: 370px; width: 100%;"></div>
+</div>
+<br>
+<div class="container">
+<div class="card">
+  <h5 class="card-header">What?</h5>
+  <div class="card-body">
+    <p class="card-text">This website tracks current and historical COVID-19 cases on Christopher Newport University's campus</p>
+    <p class="card-text">The data this website is based on is open-source and auditable.</p>
+    <p class="card-text">If you have information about COVID-19 cases at CNU which is not represented on this website, please <a href="https://twitter.com/gravity_low">contact</a> me so that I can represent it here.</p>
+  </div>
+</div>
+<br>
+<div class="card">
+  <h5 class="card-header">Why?</h5>
+  <div class="card-body">
+    <p>
+      I'm a CNU <a href="https://adamfendley.com/">alum</a> who is disappointed in CNU's lack of transparency and handling of COVID-19 cases.
+      I am worried for current Captains who reside on campus this year, and I believe that CNU's mishandling of this data puts them in more danger due to lack of proper information.
+    </p>
+    <p>
+      To illustrate this, <a href="https://cnu.edu/relaunch/">CNU's official COVID Dashboard</a> offers only a <strong>bar</strong> graph showing the current number of reported "active" cases, broken down by student and employee cases.
+      Historical data and trends are not available. In addition, CNU's bar graph has a minimum graph height of a seemingly completely arbitrary 50 cases, making the real reported number look small in comparison.
+      Even with this lacking representation, it appears that the numbers displayed on this dashboard have <a href="https://twitter.com/MommaBear867/status/1299708072663887877">not always been accurate</a>.
+    </p>
+    <p>
+      It would seem as though whoever maintains this dashboard could do with re-taking some of <a href="https://cnu.edu/academics/liberallearning/corecurriculum/">CNU's own liberal learning requirements</a> on mathematical literacy, which I am confident had a lesson on proper data representation.
+    </p>
+    <p>
+      In addition, despite ever-changing case numbers, CNU's <a href="https://twitter.com/CNUcaptains/status/1298612120595181570">tone-deaf</a> social media presence continues to portray the campus as <a href="https://twitter.com/CNUcaptains/status/1299003573452386304">safe</a> and allows community members to feel as though this is a <a href="https://twitter.com/CNUcaptains/status/1300426383139778562">regular semester with only minor inconveniences</a>.
+    </p>
+    <p>
+      This data would be much better served directly from CNU, rather than a hastily-created and unofficial website without insight into key data and case details.
+      In order to become more transparent, CNU must do the following:
+    <ol>
+      <li>Transition the official COVID-19 dashboard to a line graph or similar representation including historical numbers</li>
+      <li>Publish currently active case numbers exactly once daily at a preset time</li>
+      <li>Note clearly any errors or updates to the reported number of cases</li>
+      <li>Indicate the date when any new positive COVID-19 case is reported to the university</li>
+      <li>Disclose the total cumulative number of unique positive cases which have been reported</li>
+      <li>Disclose the total number of students instructed to quarantine due to a positive reported case</li>
+    </ol>
+    </p>
+  </div>
+</div>
+</div>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+[
+  {
+    "date": "2020-08-01",
+    "student_cases": 0,
+    "employee_cases": 0,
+    "delta": 0,
+    "reference": "N/A"
+  },
+  {
+    "date": "2020-08-12",
+    "student_cases": 1,
+    "employee_cases": 0,
+    "delta": 1,
+    "reference": "https://www.dailypress.com/news/education/dp-nw-cnu-campus-move-in-20200829-rttgbjjewnczlkglwsvlt6oere-story.html"
+  },
+  {
+    "date": "2020-08-17",
+    "student_cases": 3,
+    "employee_cases": 0,
+    "delta": 2,
+    "reference": "https://richmond.com/news/state-and-regional/govt-and-politics/cnu-says-three-students-have-reported-covid-cases/article_7b2355b7-f3fb-550a-bbed-19badbd08305.html"
+  },
+  {
+   "date": "2020-08-28",
+   "student_cases": 3,
+   "employee_cases": 1,
+   "delta": 1,
+   "reference": "https://twitter.com/MommaBear867/status/1299708072663887877/photo/3"
+  },
+  {
+   "date": "2020-08-31",
+   "student_cases": 7,
+   "employee_cases": 1,
+   "delta": 4,
+   "reference": "https://twitter.com/jones_mattryan/status/1300434090630488067"
+  },
+  {
+    "date": "2020-09-01",
+    "student_cases": 7,
+    "employee_cases": 1,
+    "delta": 0
+  },
+  {
+    "date": "2020-09-02",
+    "student_cases": 7,
+    "employee_cases": 1,
+    "delta": 0
+  }
+]
