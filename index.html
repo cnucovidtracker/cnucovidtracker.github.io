@@ -2,12 +2,22 @@
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script>
+    Date.prototype.mmddyyyy = function() {
+      var mm = this.getMonth() + 1; // getMonth() is zero-based
+      var dd = this.getDate();
+
+      return [(mm>9 ? '' : '0') + mm,
+              (dd>9 ? '' : '0') + dd,
+              this.getFullYear()
+      ].join('/');
+    };
     window.onload = function() {
       var studentDataPoints = [];
       var employeeDataPoints = [];
       var totalDataPoints = [];
       var totalCases = null;
       var latestCases = null;
+      var latestUpdate = null;
 
       var activeCasesOptions =  {
       	animationEnabled: true,
@@ -59,11 +69,12 @@
 
       $.getJSON("data.json", function(data) {
         for (var i = 0; i < data.length; i++) {
-          var xVal = new Date(data[i].date);
+          var xVal = new Date(data[i].date + "T09:00:00Z");
           var studentYVal = data[i].student_cases;
           var employeeYVal = data[i].employee_cases;
           totalCases += data[i].delta;
           latestCases = data[i].delta;
+          latestUpdate = xVal;
           studentDataPoints.push({
             x: xVal,
             y: studentYVal
@@ -81,6 +92,7 @@
         $("#total-cases-chart").CanvasJSChart(totalCasesOptions);
         $("#total-cases").text(totalCases);
         $("#todays-cases").text(latestCases);
+        $("#last-update").text(latestUpdate.mmddyyyy());
       });
     }
   </script>
@@ -91,11 +103,12 @@
 </div>
 <br>
 <div class="container">
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid" style="padding: 1rem">
   <div class="container">
-    <p class="lead">Today, <strong style="display:inline" id="todays-cases">...</strong> new COVID-19 case(s) were reported to CNU</p>
+    <h2 class="display-5">Today, <strong style="display:inline" id="todays-cases">...</strong> new COVID-19 case(s) were reported to CNU</h2>
     <hr class="my-4">
-    <p class="lead">In total, <strong style="display:inline"  id="total-cases">...</strong> positive COVID-19 cases have been reported</p>
+    <h2 class="display-5">In total, <strong style="display:inline"  id="total-cases">...</strong> positive COVID-19 cases have been reported</h2>
+    <p class="lead">Last updated: <strong style="display:inline" id="last-update">...</strong></p>
   </div>
 </div>
 </div>
