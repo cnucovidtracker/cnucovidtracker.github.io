@@ -81,5 +81,10 @@
     "student_cases": 6,
     "employee_cases": 0,
     "delta": 2
-  }
-]
+  },
+  {
+    "date": "2020-09-15",
+    "student_cases": 2,
+    "employee_cases": 1,
+    "delta": 1
+  }]
