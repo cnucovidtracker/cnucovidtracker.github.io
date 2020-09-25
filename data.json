@@ -115,19 +115,29 @@
   {
     "date": "2020-09-22",
     "student_cases": 7,
+    "students_quarantined": 6,
     "employee_cases": 1,
     "delta": 1
   },
   {
     "date": "2020-09-23",
     "student_cases": 7,
+    "students_quarantined": 54,
     "employee_cases": 1,
     "delta": 0
   },
   {
     "date": "2020-09-24",
     "student_cases": 9,
+    "students_quarantined": 57,
     "employee_cases": 1,
     "delta": 2
+  },
+  {
+    "date": "2020-09-25",
+    "student_cases": 14,
+    "students_quarantined": 55,
+    "employee_cases": 1,
+    "delta": 5
   }
 ]

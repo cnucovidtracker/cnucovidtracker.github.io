@@ -14,6 +14,7 @@
     window.onload = function() {
       var studentDataPoints = [];
       var employeeDataPoints = [];
+      var quarantinedDataPoints = [];
       var totalDataPoints = [];
       var totalCases = null;
       var latestCases = null;
@@ -46,6 +47,27 @@
       	}]
       };
 
+      var quarantineOptions =  {
+        animationEnabled: true,
+        theme: "light2",
+        title: {
+          text: "Students Directed To Self-Quarantine"
+        },
+        axisX: {
+          valueFormatString: "MM/DD/YYYY",
+        },
+        axisY: {
+          title: "# Students",
+          titleFontSize: 24
+        },
+        data: [{
+          name: "Students Quarantined",
+          type: "line",
+          showInLegend: true,
+          dataPoints: quarantinedDataPoints
+        }]
+      };
+
       var totalCasesOptions =  {
         animationEnabled: true,
         theme: "light2",
@@ -72,6 +94,11 @@
           var xVal = new Date(data[i].date + "T09:00:00Z");
           var studentYVal = data[i].student_cases;
           var employeeYVal = data[i].employee_cases;
+          var quarantineYVal = 0;
+          // We don't have datapoints for every day, don't post them if they don't exist
+          if ('students_quarantined' in data[i]) {
+            quarantineYVal = data[i].students_quarantined;
+          }
           totalCases += data[i].delta;
           latestCases = data[i].delta;
           latestUpdate = xVal;
@@ -86,9 +113,14 @@
           totalDataPoints.push({
             x: xVal,
             y: totalCases
-          })
+          });
+          quarantinedDataPoints.push({
+            x: xVal,
+            y: data[i].students_quarantined
+          });
         }
         $("#active-cases-chart").CanvasJSChart(activeCasesOptions);
+        $("#quarantine-chart").CanvasJSChart(quarantineOptions);
         $("#total-cases-chart").CanvasJSChart(totalCasesOptions);
         $("#total-cases").text(totalCases);
         $("#todays-cases").text(latestCases);
@@ -102,6 +134,12 @@
   <div id="active-cases-chart" style="height: 370px; width: 100%;"></div>
 </div>
 <br>
+<div class="container">
+  <div id="quarantine-chart" style="height: 370px; width: 100%;"></div>
+  <p>
+    This data is not public and is based on internal information, which fluctuates frequetly. It may be innacurate.
+  </p>
+</div>
 <div class="container">
 <div class="jumbotron jumbotron-fluid" style="padding: 1rem">
   <div class="container">
