@@ -146,5 +146,12 @@
     "students_quarantined": 38,
     "employee_cases": 0,
     "delta": 3
+  },
+  {
+    "date": "2020-09-29",
+    "student_cases": 17,
+    "students_quarantined": 41,
+    "employee_cases": 0,
+    "delta": 0
   }
 ]
