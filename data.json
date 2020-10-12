@@ -188,5 +188,33 @@
     "students_quarantined": 11,
     "employee_cases": 1,
     "delta": 1
+  },
+  {
+    "date": "2020-10-07",
+    "student_cases": 5,
+    "students_quarantined": 11,
+    "employee_cases": 1,
+    "delta": 0
+  },
+  {
+    "date": "2020-10-08",
+    "student_cases": 5,
+    "students_quarantined": 17,
+    "employee_cases": 1,
+    "delta": 0
+  },
+  {
+    "date": "2020-10-09",
+    "student_cases": 8,
+    "students_quarantined": 17,
+    "employee_cases": 1,
+    "delta": 3
+  },
+  {
+    "date": "2020-10-12",
+    "student_cases": 26,
+    "students_quarantined": 23,
+    "employee_cases": 1,
+    "delta": 18
   }
 ]
