@@ -295,9 +295,23 @@
     "delta": 0
   },
   {
-    "date": "2020-10-27",
+    "date": "2020-10-28",
+    "student_cases": 16,
+    "students_quarantined": 33,
+    "employee_cases": 2,
+    "delta": 0
+  },
+  {
+    "date": "2020-10-29",
     "student_cases": 16,
     "students_quarantined": 26,
+    "employee_cases": 2,
+    "delta": 0
+  },
+  {
+    "date": "2020-10-30",
+    "student_cases": 15,
+    "students_quarantined": 24,
     "employee_cases": 2,
     "delta": 0
   }
