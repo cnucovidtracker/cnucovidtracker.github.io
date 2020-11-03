@@ -316,10 +316,17 @@
     "delta": 0
   },
   {
-    "date": "2020-11-2",
+    "date": "2020-11-02",
     "student_cases": 11,
     "students_quarantined": 12,
     "employee_cases": 2,
+    "delta": 0
+  },
+  {
+    "date": "2020-11-03",
+    "student_cases": 7,
+    "students_quarantined": 11,
+    "employee_cases": 3,
     "delta": 0
   }
 ]
