@@ -344,10 +344,31 @@
     "delta": 1
   },
   {
-    "date": "2020-11-05",
+    "date": "2020-11-06",
     "student_cases": 12,
     "students_quarantined": 18,
     "employee_cases": 3,
     "delta": 1
+  },
+  {
+    "date": "2020-11-09",
+    "student_cases": 17,
+    "students_quarantined": 22,
+    "employee_cases": 3,
+    "delta": 5
+  },
+  {
+    "date": "2020-11-10",
+    "student_cases": 16,
+    "students_quarantined": 22,
+    "employee_cases": 2,
+    "delta": 0
+  },
+  {
+    "date": "2020-11-11",
+    "student_cases": 16,
+    "students_quarantined": 22,
+    "employee_cases": 2,
+    "delta": 0
   }
 ]
