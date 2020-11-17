@@ -367,7 +367,35 @@
   {
     "date": "2020-11-11",
     "student_cases": 16,
-    "students_quarantined": 22,
+    "students_quarantined": 21,
+    "employee_cases": 2,
+    "delta": 0
+  },
+  {
+    "date": "2020-11-12",
+    "student_cases": 16,
+    "students_quarantined": 20,
+    "employee_cases": 2,
+    "delta": 0
+  },
+  {
+    "date": "2020-11-13",
+    "student_cases": 15,
+    "students_quarantined": 17,
+    "employee_cases": 1,
+    "delta": 0
+  },
+  {
+    "date": "2020-11-16",
+    "student_cases": 14,
+    "students_quarantined": 20,
+    "employee_cases": 2,
+    "delta": 0
+  },
+  {
+    "date": "2020-11-17",
+    "student_cases": 13,
+    "students_quarantined": 21,
     "employee_cases": 2,
     "delta": 0
   }
