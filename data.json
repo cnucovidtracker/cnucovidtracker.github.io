@@ -538,5 +538,47 @@
     "students_quarantined": 1,
     "employee_cases": 10,
     "delta": 0
+  },
+  {
+    "date": "2021-01-16",
+    "student_cases": 1,
+    "students_quarantined": 2,
+    "employee_cases": 10,
+    "delta": 1
+  },
+  {
+    "date": "2021-01-18",
+    "student_cases": 1,
+    "students_quarantined": 2,
+    "employee_cases": 10,
+    "delta": 0
+  },
+  {
+    "date": "2021-01-19",
+    "student_cases": 1,
+    "students_quarantined": 2,
+    "employee_cases": 9,
+    "delta": 0
+  },
+  {
+    "date": "2021-01-20",
+    "student_cases": 1,
+    "students_quarantined": 2,
+    "employee_cases": 9,
+    "delta": 0
+  },
+  {
+    "date": "2021-01-21",
+    "student_cases": 2,
+    "students_quarantined": 3,
+    "employee_cases": 8,
+    "delta": 1
+  },
+  {
+    "date": "2021-01-22",
+    "student_cases": 2,
+    "students_quarantined": 3,
+    "employee_cases": 8,
+    "delta": 0
   }
 ]
