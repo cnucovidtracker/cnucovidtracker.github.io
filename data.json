@@ -622,5 +622,12 @@
     "students_quarantined": 48,
     "employee_cases": 3,
     "delta": 9
+  },
+  {
+    "date": "2021-02-02",
+    "student_cases": 25,
+    "students_quarantined": 58,
+    "employee_cases": 3,
+    "delta": 10
   }
 ]
