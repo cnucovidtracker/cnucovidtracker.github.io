@@ -638,10 +638,17 @@
     "delta": 6
   },
   {
-    "date": "2021-02-03",
+    "date": "2021-02-04",
     "student_cases": 51,
     "students_quarantined": 117,
     "employee_cases": 4,
     "delta": 20
+  },
+  {
+    "date": "2021-02-05",
+    "student_cases": 73,
+    "students_quarantined": 139,
+    "employee_cases": 5,
+    "delta": 22
   }
 ]
