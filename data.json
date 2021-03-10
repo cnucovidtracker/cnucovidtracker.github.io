@@ -769,5 +769,19 @@
     "students_quarantined": 13,
     "employee_cases": 0,
     "delta": 0
-  }
+  },
+  {
+    "date": "2021-03-08",
+    "student_cases": 1,
+    "students_quarantined": 10,
+    "employee_cases": 0,
+    "delta": 0
+  },
+  {
+    "date": "2021-03-09",
+    "student_cases": 3,
+    "students_quarantined": 8,
+    "employee_cases": 0,
+    "delta": 2
+  }  
 ]
