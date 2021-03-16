@@ -804,5 +804,12 @@
     "students_quarantined": 6,
     "employee_cases": 4,
     "delta": 0
-  }    
+  },
+  {
+    "date": "2021-03-15",
+    "student_cases": 7,
+    "students_quarantined": 11,
+    "employee_cases": 0,
+    "delta": 6
+  }  
 ]
