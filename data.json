@@ -807,9 +807,37 @@
   },
   {
     "date": "2021-03-15",
-    "student_cases": 7,
+    "student_cases": 6,
     "students_quarantined": 11,
     "employee_cases": 0,
     "delta": 6
-  }  
+  },
+  {
+    "date": "2021-03-16",
+    "student_cases": 8,
+    "students_quarantined": 11,
+    "employee_cases": 0,
+    "delta": 2
+  },
+  {
+    "date": "2021-03-17",
+    "student_cases": 7,
+    "students_quarantined": 15,
+    "employee_cases": 0,
+    "delta": 0
+  },
+  {
+    "date": "2021-03-18",
+    "student_cases": 9,
+    "students_quarantined": 11,
+    "employee_cases": 0,
+    "delta": 3
+  },
+  {
+    "date": "2021-03-19",
+    "student_cases": 11,
+    "students_quarantined": 16,
+    "employee_cases": 0,
+    "delta": 2
+  },  
 ]
